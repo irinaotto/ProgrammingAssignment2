@@ -35,11 +35,11 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-  cachedinverse<-x$getinverse
+  cachedinverse<-x$getinverse()
   #if it is null calculate the inverse
   if(is.null(cachedinverse))
   {
-    cachedinverse<-solve(x$getmatrix)
+    cachedinverse<-solve(x$getmatrix())
     x$setinverse(cachedinverse)
     
   }
